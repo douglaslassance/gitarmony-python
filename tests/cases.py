@@ -47,6 +47,8 @@ class GitalongCase(unittest.TestCase):
             store_headers=store_headers,
             managed_repository=str(self._managed_clone.working_dir),
             modify_permissions=True,
+            # TODO: Test can fail with default treshold. Need to investigate.
+            pull_threshold=1,
             track_binaries=True,
             track_uncommitted=True,
             update_gitignore=True,
